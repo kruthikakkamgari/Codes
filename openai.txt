@@ -1,0 +1,16 @@
+import openai
+
+# Your OpenAI API key
+openai.api_key = "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"
+
+try:
+    # Make a test API call (example: a simple completion)
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="Hello, how are you?",
+        max_tokens=5
+    )
+    print("OpenAI API key is valid.")
+    print(response.choices[0].text.strip())
+except Exception as e:
+    print(f"Error with OpenAI API: {e}")
